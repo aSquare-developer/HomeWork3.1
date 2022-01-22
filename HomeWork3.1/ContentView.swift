@@ -31,26 +31,30 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                Button {
-                    buttonAction()
-                } label: {
-                    Text(buttonTitle)
-                        .frame(width: 175, height: 35)
-                        .font(.title)
-                        .padding()
-                        .foregroundColor(.white)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 25)
-                                .stroke(Color.white, lineWidth: 5)
-                        )
-                }
-                .background(Color.blue)
-                .cornerRadius(25)
+                btnSettings
 
             }
             .padding()
         }
         
+    }
+    
+    private var btnSettings: some View {
+        Button {
+            buttonAction()
+        } label: {
+            Text(buttonTitle)
+                .frame(width: 175, height: 35)
+                .font(.title)
+                .padding()
+                .foregroundColor(.white)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 25)
+                        .stroke(Color.white, lineWidth: 5)
+                )
+        }
+        .background(Color.blue)
+        .cornerRadius(25)
     }
     
     private func buttonAction() {
