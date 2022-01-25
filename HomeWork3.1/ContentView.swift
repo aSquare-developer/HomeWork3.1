@@ -7,74 +7,68 @@
 
 import SwiftUI
 
+enum CurrentLight {
+    case red, yellow, green
+}
+
 struct ContentView: View {
     
-    @State private var redView = ColorCircleView(color: .red, opacity: 0.3)
-    @State private var yellowView = ColorCircleView(color: .yellow, opacity: 0.3)
-    @State private var greenView = ColorCircleView(color: .green, opacity: 0.3)
-    
-    @State private var buttonTag = 0
     @State private var buttonTitle = "START"
     
+    @State private var redLightState = 0.3
+    @State private var yellowLightState = 0.3
+    @State private var greenLightState = 0.3
+    
+    @State private var currentLight = CurrentLight.red
+    
+    private func nextColor() {
+        
+        let lightIsOn = 1.0
+        let lightIsOff = 0.3
+        
+        switch currentLight {
+        case .red:
+            currentLight = .yellow
+            greenLightState = lightIsOff
+            redLightState = lightIsOn
+        case .yellow:
+            currentLight = .green
+            redLightState = lightIsOff
+            yellowLightState = lightIsOn
+        case .green:
+            currentLight = .red
+            greenLightState = lightIsOn
+            yellowLightState = lightIsOff
+        }
+    }
+
+}
+
+extension ContentView {
     var body: some View {
         
         ZStack {
             Color(.black)
                 .ignoresSafeArea()
             
-            VStack {
-                VStack {
-                    redView
-                    yellowView
-                    greenView
-                }
+            VStack(spacing: 20) {
+                ColorCircleView(color: .red, opacity: redLightState)
+                ColorCircleView(color: .yellow, opacity: yellowLightState)
+                ColorCircleView(color: .green, opacity: greenLightState)
                 
                 Spacer()
                 
-                btnSettings
-
+                ChangeColorButton(title: buttonTitle) {
+                    if buttonTitle == "START" {
+                        buttonTitle = "NEXT"
+                    }
+                    nextColor()
+                }
             }
             .padding()
         }
         
     }
-    
-    private var btnSettings: some View {
-        Button {
-            buttonAction()
-        } label: {
-            Text(buttonTitle)
-                .frame(width: 175, height: 35)
-                .font(.title)
-                .padding()
-                .foregroundColor(.white)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 25)
-                        .stroke(Color.white, lineWidth: 5)
-                )
-        }
-        .background(Color.blue)
-        .cornerRadius(25)
-    }
-    
-    private func buttonAction() {
-        switch buttonTag {
-        case 0:
-            greenView.opacity = 0.3
-            redView.opacity = 1
-            buttonTitle = "NEXT"
-            buttonTag = 1
-        case 1:
-            redView.opacity = 0.3
-            yellowView.opacity = 1
-            buttonTag = 2
-        default:
-            yellowView.opacity = 0.3
-            greenView.opacity = 1
-            buttonTag = 0
-        }
-    }
-
 }
 
 struct ContentView_Previews: PreviewProvider {
