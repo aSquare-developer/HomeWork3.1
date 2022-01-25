@@ -12,6 +12,7 @@
 		7512B3CC279C7A53008635FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7512B3CB279C7A53008635FB /* Assets.xcassets */; };
 		7512B3CF279C7A53008635FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7512B3CE279C7A53008635FB /* Preview Assets.xcassets */; };
 		7512B3D6279C7BBA008635FB /* ColorCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7512B3D5279C7BBA008635FB /* ColorCircleView.swift */; };
+		759A030327A06B0E000140F6 /* ChangeColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A030227A06B0E000140F6 /* ChangeColorButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		7512B3CB279C7A53008635FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7512B3CE279C7A53008635FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7512B3D5279C7BBA008635FB /* ColorCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCircleView.swift; sourceTree = "<group>"; };
+		759A030227A06B0E000140F6 /* ChangeColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeColorButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				7512B3C7279C7A51008635FB /* HomeWork3_1App.swift */,
+				759A030227A06B0E000140F6 /* ChangeColorButton.swift */,
 				7512B3D5279C7BBA008635FB /* ColorCircleView.swift */,
 				7512B3C9279C7A51008635FB /* ContentView.swift */,
 				7512B3CB279C7A53008635FB /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 				7512B3D6279C7BBA008635FB /* ColorCircleView.swift in Sources */,
 				7512B3CA279C7A51008635FB /* ContentView.swift in Sources */,
 				7512B3C8279C7A51008635FB /* HomeWork3_1App.swift in Sources */,
+				759A030327A06B0E000140F6 /* ChangeColorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
